@@ -70,10 +70,13 @@ Every nWave response in Codex is intended to end with an explicit handoff:
 - the current phase
 - whether you should review artifacts now
 - what to review
+- the phase commit, if one was created
 - the next step
 - the exact next prompt to send
 
 So instead of wondering "am I supposed to approve this design?", the response should tell you directly.
+
+When a phase changes files, `nwave-codex` is also intended to commit that phase before handing off to you.
 
 ## What Gets Installed
 
@@ -111,6 +114,7 @@ What changes in Codex:
 - no Claude `Task` subagents; Codex emulates the requested role in-session
 - no Claude DES hooks; delivery discipline is explicit and file-driven rather than hook-enforced
 - every phase should explicitly tell the user what to do next
+- completed phases with file changes should end with a dedicated git commit
 
 ## Project Layout
 

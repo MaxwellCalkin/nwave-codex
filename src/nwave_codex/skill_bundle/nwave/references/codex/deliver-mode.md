@@ -42,6 +42,21 @@ Use the upstream templates in `references/upstream/templates/` as shape referenc
 6. Run an explicit review pass against the modified files before finalizing.
 7. Only finalize after tests and any required quality checks pass.
 
+## Deliver commit boundaries
+
+Within `deliver`, commit at meaningful phase boundaries when files changed.
+
+Minimum expectation:
+
+- commit after roadmap creation or roadmap revision
+- commit after accepted implementation batches
+- commit after explicit refactor passes
+- commit after finalize artifacts are written
+
+Use focused commits rather than one giant end-of-run commit whenever the workflow naturally pauses for review.
+
+If a deliver checkpoint is awaiting user review, the commit should already exist before you ask the user to review it.
+
 ## Deliver closeout rules
 
 During `deliver`, every meaningful checkpoint should tell the user exactly where execution stands.
@@ -51,6 +66,7 @@ At minimum, report:
 - whether you are in roadmap creation, step execution, review, mutation testing, or finalize
 - whether you are waiting on human review or continuing automatically
 - the concrete artifact to inspect next
+- the phase commit, if one was created
 - the next prompt if another explicit user message is needed
 
 Examples:

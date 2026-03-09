@@ -49,6 +49,24 @@ Do not assume the user knows nWave's state machine. State it directly.
 
 If a phase produced design, requirements, roadmap, or acceptance-test artifacts, default to `ready for review` unless the user explicitly said to continue without pausing.
 
+## Git commit rules
+
+Codex must treat each completed nWave phase as a commit boundary when that phase changed files.
+
+Always:
+
+- inspect git status before closing the phase
+- create a dedicated commit for the phase if the phase produced changes
+- report the resulting commit in the user-facing closeout
+
+Do not:
+
+- silently leave completed phase changes uncommitted
+- mix unrelated pre-existing changes into the phase commit
+- claim a phase is complete if the user asked for commit-backed checkpoints and no commit was created
+
+If pre-existing unrelated changes make a clean phase commit unsafe, stop and tell the user exactly why.
+
 ## Deliver-specific rules
 
 For `deliver` and related commands, also read `deliver-mode.md` before making edits.

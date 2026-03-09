@@ -54,6 +54,31 @@ If the current phase does not require review, say that too:
 
 Keep the closeout concise, but never omit it.
 
+## Mandatory phase commits
+
+If an nWave phase changed tracked or new files in the workspace, commit those changes before closing the phase.
+
+Rules:
+
+- At the end of each completed phase, run `git status --short` and check whether that phase produced file changes.
+- If there are relevant changes from the phase, stage them and create a git commit before presenting the final handoff.
+- If there are no file changes, say `No phase commit was created because this phase produced no file changes.`
+- Never skip the commit silently.
+- Never include unrelated unreviewed changes on purpose. If unrelated changes already exist and they would contaminate the phase commit, stop and tell the user.
+
+Default commit format:
+
+- `feat(nwave-discover): complete discover phase for {feature-id}`
+- `feat(nwave-discuss): complete discuss phase for {feature-id}`
+- `feat(nwave-design): complete design phase for {feature-id}`
+- `feat(nwave-devops): complete devops phase for {feature-id}`
+- `feat(nwave-distill): complete distill phase for {feature-id}`
+- `feat(nwave-deliver): complete deliver phase for {feature-id}`
+
+Include the commit result in the closeout:
+
+- `Phase commit: {short-sha} {commit-subject}`
+
 ## Routing
 
 If the user names a wave or command, load the matching upstream command file and its mapped specialist. If the user only says "use nWave", infer the closest command from their request.
