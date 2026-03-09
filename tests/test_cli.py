@@ -33,6 +33,9 @@ class InstallerTests(unittest.TestCase):
         self.assertTrue(bundle.exists())
         self.assertTrue((bundle / "SKILL.md").exists())
         self.assertTrue((bundle / "agents" / "openai.yaml").exists())
+        self.assertTrue((bundle / "references" / "codex" / "parity.md").exists())
+        self.assertTrue((bundle / "references" / "codex" / "command-map.md").exists())
+        self.assertTrue((bundle / "references" / "codex" / "deliver-mode.md").exists())
 
     def test_install_and_uninstall(self) -> None:
         codex_home = self.make_temp_home()

@@ -33,6 +33,22 @@ This skill vendors the upstream Claude Code nWave prompt assets, but Codex does 
 - Use the upstream agent file plus its skill bundle as the methodology contract.
 - When upstream instructions require an unavailable mechanism, keep the intent and replace only the mechanism.
 
+## User guidance rules
+
+Codex must make the workflow state explicit after every nWave response.
+
+Always tell the user:
+
+- which wave or command just ran
+- whether that phase is awaiting user review or is ready to continue
+- which artifacts to review, if any
+- the exact next wave or action
+- a copy-pasteable next prompt
+
+Do not assume the user knows nWave's state machine. State it directly.
+
+If a phase produced design, requirements, roadmap, or acceptance-test artifacts, default to `ready for review` unless the user explicitly said to continue without pausing.
+
 ## Deliver-specific rules
 
 For `deliver` and related commands, also read `deliver-mode.md` before making edits.

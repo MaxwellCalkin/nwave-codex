@@ -29,6 +29,31 @@ Before doing any nWave work, read these files in order:
 - When an upstream command assumes slash commands, Task subagents, or Claude DES hooks, apply the Codex substitutions from the `references/codex/` files.
 - Do not claim that slash commands, plugin hooks, or Task subagents ran if Codex did not actually run them.
 
+## Mandatory closeout
+
+Every nWave response MUST end with a short user-facing handoff section. Do not leave the user guessing what phase they are in or what they should do next.
+
+Always include:
+
+- `Current phase`: the active wave or command that just completed
+- `Status`: one of `in progress`, `ready for review`, `approved and ready for next phase`, or `blocked`
+- `What you should review`: the artifacts or files the user should inspect, or `none`
+- `Next step`: the exact next wave or action
+- `Next prompt`: a copy-pasteable prompt the user can send next
+
+If the workflow skipped prior waves, say that explicitly in the closeout.
+
+If the current phase requires human approval before moving on, say so plainly:
+
+- `Please review these docs before moving to DISTILL.`
+- `Please approve or request changes before moving to DELIVER.`
+
+If the current phase does not require review, say that too:
+
+- `No review gate is required here; the next step is DELIVER.`
+
+Keep the closeout concise, but never omit it.
+
 ## Routing
 
 If the user names a wave or command, load the matching upstream command file and its mapped specialist. If the user only says "use nWave", infer the closest command from their request.

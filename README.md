@@ -65,6 +65,16 @@ Use $nwave to deliver the password reset feature with TDD.
 Use $nwave to review the implementation.
 ```
 
+Every nWave response in Codex is intended to end with an explicit handoff:
+
+- the current phase
+- whether you should review artifacts now
+- what to review
+- the next step
+- the exact next prompt to send
+
+So instead of wondering "am I supposed to approve this design?", the response should tell you directly.
+
 ## What Gets Installed
 
 The installer copies one bundled skill into your Codex home:
@@ -100,6 +110,7 @@ What changes in Codex:
 - no `/nw:*` slash commands; use `$nwave` or plain language
 - no Claude `Task` subagents; Codex emulates the requested role in-session
 - no Claude DES hooks; delivery discipline is explicit and file-driven rather than hook-enforced
+- every phase should explicitly tell the user what to do next
 
 ## Project Layout
 
