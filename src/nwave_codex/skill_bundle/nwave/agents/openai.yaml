@@ -1,0 +1,7 @@
+interface:
+  display_name: "nWave"
+  short_description: "Run the nWave workflow in Codex"
+  default_prompt: "Use $nwave to run the right nWave wave or command for this task."
+
+policy:
+  allow_implicit_invocation: true

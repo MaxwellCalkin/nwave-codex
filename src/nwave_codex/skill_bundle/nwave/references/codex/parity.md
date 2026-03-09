@@ -1,0 +1,38 @@
+# Codex Parity Rules
+
+This skill vendors the upstream Claude Code nWave prompt assets, but Codex does not expose the same runtime primitives. Apply these substitutions every time you use an upstream nWave reference.
+
+## Environment mapping
+
+| Upstream nWave assumption | Codex substitution |
+| --- | --- |
+| `/nw:command` slash command | Natural-language request or explicit `$nwave` invocation |
+| `Task` subagent dispatch | Emulate the requested agent role directly in the current Codex session |
+| `~/.claude/commands/nw/*.md` | `references/upstream/commands/*.md` |
+| `~/.claude/agents/nw/*.md` | `references/upstream/agents/*.md` |
+| `~/.claude/skills/nw/{agent}/...` | `references/upstream/skills/{agent}/...` |
+| Project `CLAUDE.md` | Project `CLAUDE.md` if present, otherwise `AGENTS.md` or current repo instructions |
+| Claude DES hooks | Manual delivery discipline documented in `deliver-mode.md` |
+
+## Honesty rules
+
+- Never pretend a slash command ran.
+- Never pretend a separate reviewer or crafter subagent ran.
+- Never claim DES enforced anything at runtime unless a real tool did so.
+- Say "I am emulating the {agent-name} role in this Codex session" when the upstream workflow would have dispatched another agent.
+
+## File-system rules
+
+- Keep the upstream nWave directory structure for artifacts.
+- Prefer `docs/feature/{feature-id}/{wave}/...` for wave outputs.
+- Prefer `.nwave/des-config.json` for rigor settings to preserve compatibility with upstream docs.
+
+## Workflow rules
+
+- Use the upstream command file as the semantic contract for outputs, success criteria, and handoffs.
+- Use the upstream agent file plus its skill bundle as the methodology contract.
+- When upstream instructions require an unavailable mechanism, keep the intent and replace only the mechanism.
+
+## Deliver-specific rules
+
+For `deliver` and related commands, also read `deliver-mode.md` before making edits.

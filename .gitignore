@@ -1,0 +1,13 @@
+.nwave-upstream/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.coverage
+dist/
+build/
+*.egg-info/
+.codex-test/
+.tmp-test-work/
