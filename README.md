@@ -78,6 +78,8 @@ So instead of wondering "am I supposed to approve this design?", the response sh
 
 When a phase changes files, `nwave-codex` is also intended to commit that phase before handing off to you.
 
+For `discuss`, `design`, `devops`, and `distill`, the agent is also intended to ask focused spec-shaping questions before it finalizes artifacts, unless those answers are already present in prior wave docs or you explicitly ask it to make reasonable assumptions.
+
 ## What Gets Installed
 
 The installer copies one bundled skill into your Codex home:
@@ -115,6 +117,7 @@ What changes in Codex:
 - no Claude DES hooks; delivery discipline is explicit and file-driven rather than hook-enforced
 - every phase should explicitly tell the user what to do next
 - completed phases with file changes should end with a dedicated git commit
+- planning and spec phases should ask focused user questions instead of silently guessing
 
 ## Project Layout
 

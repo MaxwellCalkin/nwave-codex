@@ -49,6 +49,19 @@ Do not assume the user knows nWave's state machine. State it directly.
 
 If a phase produced design, requirements, roadmap, or acceptance-test artifacts, default to `ready for review` unless the user explicitly said to continue without pausing.
 
+## Interactive question rules
+
+Codex must preserve nWave's collaborative feel for the planning and specification phases.
+
+For `discuss`, `design`, `devops`, and `distill`:
+
+- ask focused clarification questions before writing final artifacts when key decisions remain open
+- prefer a small, high-value question set rather than a giant survey
+- treat upstream `Interactive Decision Points` sections as required user checkpoints unless prior artifacts already answer them
+- if you proceed on assumptions, state those assumptions explicitly
+
+Do not silently replace user involvement with guessed defaults when the phase is supposed to shape the spec with the user.
+
 ## Git commit rules
 
 Codex must treat each completed nWave phase as a commit boundary when that phase changed files.

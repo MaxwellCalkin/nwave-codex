@@ -18,7 +18,8 @@ Before doing any nWave work, read these files in order:
 
 1. `references/codex/parity.md`
 2. `references/codex/command-map.md`
-3. `references/codex/deliver-mode.md` only when the request is about `deliver`, `execute`, `roadmap`, `review`, `mutation-test`, `refactor`, or `finalize`
+3. `references/codex/interaction-mode.md`
+4. `references/codex/deliver-mode.md` only when the request is about `deliver`, `execute`, `roadmap`, `review`, `mutation-test`, `refactor`, or `finalize`
 
 ## Required operating rules
 
@@ -53,6 +54,27 @@ If the current phase does not require review, say that too:
 - `No review gate is required here; the next step is DELIVER.`
 
 Keep the closeout concise, but never omit it.
+
+## Mandatory interactive checkpoints
+
+`discuss`, `design`, `devops`, and `distill` are collaborative phases. Do not turn them into silent document-generation passes.
+
+Rules:
+
+- Before producing final artifacts for these phases, ask the user focused questions when key decisions are still ambiguous.
+- Prefer one short question round with 1-3 tightly targeted questions over a long interrogation.
+- If the needed answers already exist in prior wave artifacts, summarize them and continue without re-asking.
+- If the user explicitly says to make reasonable assumptions, you may proceed, but you must list the assumptions you made.
+- If the upstream phase defines interactive decision points, treat those as real user checkpoints in Codex too.
+
+Minimum expectation by phase:
+
+- `discuss`: ask about user goals, success criteria, edge cases, and acceptance expectations when they are not already explicit
+- `design`: ask about constraints, tradeoffs, integration boundaries, and non-functional priorities when they are still open
+- `devops`: ask about deployment target, CI/CD, observability, and existing infrastructure when those choices are not already documented
+- `distill`: ask about acceptance-test scope, critical scenarios, edge cases, and what must be proven before implementation
+
+Do not skip these questions just because Codex can guess. nWave is supposed to involve the user in shaping the spec.
 
 ## Mandatory phase commits
 
