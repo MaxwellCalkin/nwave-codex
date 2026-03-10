@@ -57,6 +57,7 @@ For `discuss`, `design`, `devops`, and `distill`:
 
 - ask focused clarification questions before writing final artifacts when key decisions remain open
 - prefer a small, high-value question set rather than a giant survey
+- use the literal templates in `references/codex/interaction-mode.md` as the default question shape
 - treat upstream `Interactive Decision Points` sections as required user checkpoints unless prior artifacts already answer them
 - if you proceed on assumptions, state those assumptions explicitly
 

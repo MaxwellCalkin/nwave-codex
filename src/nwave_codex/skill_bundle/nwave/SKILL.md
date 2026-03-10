@@ -63,6 +63,7 @@ Rules:
 
 - Before producing final artifacts for these phases, ask the user focused questions when key decisions are still ambiguous.
 - Prefer one short question round with 1-3 tightly targeted questions over a long interrogation.
+- Use the literal phase templates in `references/codex/interaction-mode.md` instead of inventing an ad hoc question style each time.
 - If the needed answers already exist in prior wave artifacts, summarize them and continue without re-asking.
 - If the user explicitly says to make reasonable assumptions, you may proceed, but you must list the assumptions you made.
 - If the upstream phase defines interactive decision points, treat those as real user checkpoints in Codex too.

@@ -80,6 +80,8 @@ When a phase changes files, `nwave-codex` is also intended to commit that phase 
 
 For `discuss`, `design`, `devops`, and `distill`, the agent is also intended to ask focused spec-shaping questions before it finalizes artifacts, unless those answers are already present in prior wave docs or you explicitly ask it to make reasonable assumptions.
 
+Those phases now have literal question-round templates as part of the bundled skill, so the interaction should be more consistent from run to run.
+
 ## What Gets Installed
 
 The installer copies one bundled skill into your Codex home:

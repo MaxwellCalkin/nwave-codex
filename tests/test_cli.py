@@ -38,9 +38,17 @@ class InstallerTests(unittest.TestCase):
         self.assertTrue((bundle / "references" / "codex" / "deliver-mode.md").exists())
         self.assertTrue((bundle / "references" / "codex" / "interaction-mode.md").exists())
         skill_text = (bundle / "SKILL.md").read_text(encoding="utf-8")
+        interaction_text = (
+            bundle / "references" / "codex" / "interaction-mode.md"
+        ).read_text(encoding="utf-8")
         self.assertIn("Mandatory phase commits", skill_text)
         self.assertIn("Mandatory interactive checkpoints", skill_text)
         self.assertIn("Phase commit:", skill_text)
+        self.assertIn("Questions for you", interaction_text)
+        self.assertIn("What I heard", interaction_text)
+        self.assertIn("design template", interaction_text)
+        self.assertIn("devops template", interaction_text)
+        self.assertIn("distill template", interaction_text)
 
     def test_install_and_uninstall(self) -> None:
         codex_home = self.make_temp_home()
